@@ -1,21 +1,8 @@
 /**
- * ============================================================================
- * TYPE DEFINITIONS
- * ============================================================================
- * 
  * Architecture Decision:
- * - Centralized type definitions improve code maintainability
- * - Separating API response types from UI types allows for data transformation
- * - Using TypeScript interfaces ensures type safety across the application
+ * Separating API response types from UI types allows for data transformation
  */
 
-// ============================================================================
-// API Response Types (PokeAPI)
-// ============================================================================
-
-/**
- * Raw Pokemon list item from PokeAPI
- */
 export interface PokemonListResponse {
   count: number;
   next: string | null;
@@ -71,15 +58,8 @@ export interface PokemonDetail {
   }[];
 }
 
-// ============================================================================
-// UI/App Types
-// ============================================================================
-
 /**
  * Transformed Pokemon item for UI consumption
- * Performance Best Practice: 
- * - Keep UI types lean with only required display data
- * - Pre-compute derived values to avoid re-renders
  */
 export interface Pokemon {
   id: number;
